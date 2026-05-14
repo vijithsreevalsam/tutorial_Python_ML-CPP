@@ -1,0 +1,16 @@
+{
+    "name": "VNC Test",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "postStartCommand": "/home/vscode/start-vnc.sh &",
+
+    "forwardPorts": [6080],
+
+    "remoteUser": "vscode",
+    "shutdownAction": "stopContainer",
+
+    "runArgs": ["--shm-size=512m"]
+}
